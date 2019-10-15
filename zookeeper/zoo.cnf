@@ -1,0 +1,19 @@
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=ZookeeperDataPath
+dataLogDir=ZookeeperLogPath
+clientPort=2181
+# 3.5.0 新增，是否独立模式运行，设为false，单机也以分布式运行
+standaloneEnabled=false
+# 3.5.3 新增，动态重新配置
+reconfigEnabled=true
+# 3.5.0 新增，动态配置文件，部分动态：服务器、组、权重
+dynamicConfigFile=/zookeeper/conf/zoo_replicated1.cfg.dynamic
+# 禁用ACL检查
+skipACL=no
+#server.<positive id> = <address1>:<port1>:<port2>[:role];[<client port address>:]<client port>**
+server.1=ZookeeperService1HostIP:2888:3888:participant
+server.2=ZookeeperService2HostIP:2888:3888:participant
+server.3=ZookeeperService3HostIP:2888:3888:participant
+
